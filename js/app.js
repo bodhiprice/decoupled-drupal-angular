@@ -2,7 +2,4 @@
 
 angular
   .module('decoupled-Drupal', [])
-  .controller('MainController', ['$scope', function($scope) {
-    // something here
-    $scope.title = "This is a title";
-  }]);
+  .module('decoupled-Drupal.controllers', []);
