@@ -2,4 +2,4 @@
 
 Angular JS frontend for decoupled Drupal experiment. The demo for this project is here:
 
-http://friendly-machine.github.io/decoupled-drupal-angular
+http://friendlymachine.github.io/decoupled-drupal-angular
