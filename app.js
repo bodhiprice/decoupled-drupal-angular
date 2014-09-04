@@ -1,6 +1,9 @@
 // practice app for decoupled or "Headless" Drupal
 
-var decoupledDrupal = angular.module('decoupledDrupal', ['ngRoute']);
+var drupalSite = 'http://dev-decoupled-drupal.gotpantheon.com/';
+
+var decoupledDrupal = angular.module('decoupledDrupal', ['ngRoute', 'ngResource',
+  'ngSanitize']);
 
 decoupledDrupal.config(function ($routeProvider) {
   $routeProvider
