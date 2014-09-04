@@ -1,6 +1,7 @@
 // practice app for decoupled or "Headless" Drupal
+// lots of refactoring needed
 
-var drupalSite = 'http://dev-decoupled-drupal.gotpantheon.com/';
+var sourceSite = 'http://dev-decoupled-d7.gotpantheon.com/';
 
 var decoupledDrupal = angular.module('decoupledDrupal', ['ngRoute', 'ngResource',
   'ngSanitize']);
@@ -18,12 +19,16 @@ decoupledDrupal.config(function ($routeProvider) {
     });
 });
 
-  	// create the controller and inject Angular's $scope
-	decoupledDrupal.controller('MainController', function($scope) {
-		// create a message to display in our view
-		$scope.title = 'This is the front page';
-	});
+	decoupledDrupal.controller('MainController', ['$scope','$http', function($scope, $http) {
+		// get the content for node 1
+    var node = sourceSite + 'api/node/1.json';
+		$http.get(node).success (function(data){
+      $scope.aboutNode = data;
+    });
+	}]);
 
-	decoupledDrupal.controller('AboutController', function($scope) {
-		$scope.title = 'This is the about page.';
-	});
+  decoupledDrupal.controller('AboutController', ['$scope','$http', function($scope, $http) {
+    $http.get('http://decoupled-drupal-d7/api/node/3.json').success (function(data){
+      $scope.aboutNode = data;
+    });
+  }]);
