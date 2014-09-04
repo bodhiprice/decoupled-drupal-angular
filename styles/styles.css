@@ -1,0 +1,24 @@
+html {
+  background: #eee;
+}
+
+body {
+  background: #fff;
+  font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 700px;
+  min-height: 500px;
+  padding: 2rem;
+  width: 90%;
+}
+
+.menu {
+  padding-left: 0;
+}
+
+.menu li {
+  display: inline-block;
+  list-style: none;
+  margin-right: 1rem;
+}
