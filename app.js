@@ -22,13 +22,14 @@ decoupledDrupal.config(function ($routeProvider) {
 	decoupledDrupal.controller('MainController', ['$scope','$http', function($scope, $http) {
 		// get the content for node 1
     var node = sourceSite + 'api/node/1.json';
-		$http.get(node).success (function(data){
-      $scope.aboutNode = data;
+		$http.get(node).success (function(data) {
+      $scope.node = data;
     });
 	}]);
 
   decoupledDrupal.controller('AboutController', ['$scope','$http', function($scope, $http) {
-    $http.get('http://decoupled-drupal-d7/api/node/3.json').success (function(data){
-      $scope.aboutNode = data;
+    var node = sourceSite + 'api/node/3.json';
+    $http.get(node).success (function(data) {
+      $scope.node = data;
     });
   }]);
